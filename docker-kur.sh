@@ -31,3 +31,5 @@ docker run hello-world
 # groupadd docker
 # useradd <username>
 # usermod -aG docker <username>
+#
+# NOTE: docker exec -it <dockernameOrID> bash
