@@ -11,6 +11,9 @@ if [ ! -f /etc/nginx/sites-enabled/default ]; then
 	exit 1
 fi
 
+# update
+apt update
+
 # nginx, mysql, php7
 apt install -y nginx nginx-extras mysql-server php7.0-fpm php7.0-mysql php7.0-mcrypt php7.0-gd php7.0-curl php7.0-xml
 
