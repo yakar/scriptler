@@ -50,6 +50,9 @@ docker run -d --name logstash -p 5044:5044 --link elasticsearch:elasticsearch -v
 # Kibana
 docker run --name kibana --link elasticsearch:elasticsearch -p 5601:5601 -d kibana
 
+#
+# NOTE: docker exec -it <dockernameOrID> bash
+#
 # beats clients
 # Packetbeat – Analyze network packet data.
 # Filebeat – Real-time insight into log data.
@@ -60,3 +63,14 @@ docker run --name kibana --link elasticsearch:elasticsearch -p 5601:5601 -d kiba
 # Config: vim /etc/filebeat/filebeat.yml
 # Config Test: filebeat --configtest -c /etc/filebeat/filebeat.yml
 # systemctl restart filebeat
+#
+# X-Pack: https://www.elastic.co/downloads/x-pack
+# docker exec -it elasticsearch bash
+#	bin/elasticsearch-plugin install x-pack
+#	exit
+# docker exec -it kibana bash
+#	bin/kibana-plugin install x-pack
+#	exit
+# docker restart elasticsearch
+# docker restart kibana
+# docker restart logstash
