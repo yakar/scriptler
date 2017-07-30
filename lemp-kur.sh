@@ -6,7 +6,7 @@
 if [ "$(id -u)" != "0" ]; then echo -e "[!] Must be run with root auth: sudo bash $0"; exit 1; fi
 
 # check if nginx installed?
-if [ ! -f /etc/nginx/sites-enabled/default ]; then
+if [ -f /etc/nginx/sites-enabled/default ]; then
 	echo "Your nginx is installed, not need this script."
 	exit 1
 fi
