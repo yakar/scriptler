@@ -70,10 +70,8 @@ apt-get -y install unace rar unrar p7zip-rar p7zip sharutils uudeview mpack arj 
 # sublime text 3 packages
 if [ ! -d '~/.config/sublime-text-3/Installed Packages/' ]; then
     mkdir -p ~/.config/sublime-text-3/Installed\ Packages/
-    wget --no-check-certificate https://github.com/yakar/scriptler/raw/master/ubuntu-extra/Git.sublime-package -O ~/.config/sublime-text-3/Installed\ Packages/Git.sublime-package
-    chown $SUDO_USER:$SUDO_USER -R ~/.config/sublime-text-3/Installed\ Packages/Git.sublime-package
-    wget --no-check-certificate https://github.com/yakar/scriptler/raw/master/ubuntu-extra/Package%20Control.sublime-package -O ~/.config/sublime-text-3/Installed\ Packages/Package\ Control.sublime-package
-    chown $SUDO_USER:$SUDO_USER -R ~/.config/sublime-text-3/Installed\ Packages/Package\ Control.sublime-package
+    sudo -u $SUDO_USER wget --no-check-certificate https://github.com/yakar/scriptler/raw/master/ubuntu-extra/Git.sublime-package -O ~/.config/sublime-text-3/Installed\ Packages/Git.sublime-package
+    sudo -u $SUDO_USER wget --no-check-certificate https://github.com/yakar/scriptler/raw/master/ubuntu-extra/Package%20Control.sublime-package -O ~/.config/sublime-text-3/Installed\ Packages/Package\ Control.sublime-package
 fi
 
 
@@ -126,9 +124,8 @@ fi
 # PyCharm ( https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&code=PCC && )
 if [ ! -d ~/pycharm-community ]; then
     sudo -u $SUDO_USER wget --no-check-certificate https://download.jetbrains.com/python/pycharm-community-2017.2.1.tar.gz -O /tmp/pycharm-community-2017.2.1.tar.gz
-    tar -zxf /tmp/pycharm-community-2017.2.1.tar.gz
-    mv pycharm-community-2017.2.1 ~/pycharm-community
-    chown $SUDO_USER:$SUDO_USER -R ~/pycharm-community
+    sudo -u $SUDO_USER tar -zxf /tmp/pycharm-community-2017.2.1.tar.gz
+    sudo -u $SUDO_USER mv pycharm-community-2017.2.1 ~/pycharm-community
     echo '
     [Desktop Entry]
     Version=1.0
