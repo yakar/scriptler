@@ -14,7 +14,8 @@ if [ "$(id -u)" != "0" ]; then echo "Run with sudo: sudo $0"; exit 1; fi
 
 apt-get -y install libpam-google-authenticator
 
-if [ grep -vq "Enable MFA using Google Authenticator PAM" /etc/pam.d/sshd ]; then
+if grep -vq "Enable MFA using Google Authenticator PAM" /etc/pam.d/sshd
+then
 	echo -e '\n# Enable MFA using Google Authenticator PAM\nauth required pam_google_authenticator.so nullok' >> /etc/pam.d/sshd
 
 	sed -i "s/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/g" /etc/ssh/sshd_config
