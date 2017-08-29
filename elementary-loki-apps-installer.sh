@@ -71,8 +71,8 @@ apt -y install unace rar unrar p7zip-rar p7zip sharutils uudeview mpack arj cabe
 # sublime text 3 packages
 if [ ! -d '~/.config/sublime-text-3/Installed Packages/' ]; then
     mkdir -p ~/.config/sublime-text-3/Installed\ Packages/
-    sudo -u $SUDO_USER wget --no-check-certificate https://github.com/yakar/scriptler/raw/master/ubuntu-extra/Git.sublime-package -O ~/.config/sublime-text-3/Installed\ Packages/Git.sublime-package
-    sudo -u $SUDO_USER wget --no-check-certificate https://github.com/yakar/scriptler/raw/master/ubuntu-extra/Package%20Control.sublime-package -O ~/.config/sublime-text-3/Installed\ Packages/Package\ Control.sublime-package
+    sudo -u $SUDO_USER wget --no-check-certificate https://github.com/yakar/scriptler/raw/master/elementary-loki-apps/Git.sublime-package -O ~/.config/sublime-text-3/Installed\ Packages/Git.sublime-package
+    sudo -u $SUDO_USER wget --no-check-certificate https://github.com/yakar/scriptler/raw/master/elementary-loki-apps/Package%20Control.sublime-package -O ~/.config/sublime-text-3/Installed\ Packages/Package\ Control.sublime-package
 fi
 
 
@@ -82,7 +82,7 @@ cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
 
 # grub-customizer theme
 if [ ! -d /boot/grub/themes/Aurora-Penguinis-GRUB2 ]; then
-    wget --no-check-certificate https://github.com/yakar/scriptler/raw/master/ubuntu-extra/Aurora-Penguinis-GRUB2.tar.gz -O /tmp/Aurora-Penguinis-GRUB2.tar.gz
+    wget --no-check-certificate https://github.com/yakar/scriptler/raw/master/elementary-loki-apps/Aurora-Penguinis-GRUB2.tar.gz -O /tmp/Aurora-Penguinis-GRUB2.tar.gz
     tar -zxf /tmp/Aurora-Penguinis-GRUB2.tar.gz
     mv -f Aurora-Penguinis-GRUB2 /boot/grub/themes/
 fi
@@ -109,7 +109,7 @@ if [ ! -d ~/Telegram ]; then
     sudo -u $SUDO_USER wget --no-check-certificate https://telegram.org/dl/desktop/linux -O /tmp/telegram.tar.gz
     tar -xf /tmp/telegram.tar.gz
     mv -f Telegram ~/Telegram
-    sudo -u $SUDO_USER wget --no-check-certificate https://github.com/yakar/scriptler/raw/master/ubuntu-extra/telegram.png -O ~/Telegram/icon.png
+    sudo -u $SUDO_USER wget --no-check-certificate https://github.com/yakar/scriptler/raw/master/elementary-loki-apps/telegram.png -O ~/Telegram/icon.png
     echo '
     [Desktop Entry]
     Encoding=UTF-8
@@ -127,7 +127,7 @@ fi
 PyCharmVersion="2017.2.2"
 if [ ! -d ~/pycharm-community ]; then
     sudo -u $SUDO_USER wget --no-check-certificate https://download.jetbrains.com/python/pycharm-community-2017.2.2.tar.gz -O /tmp/pycharm-community.tar.gz
-    sudo -u $SUDO_USER tar -zxf /tmp/pycharm-community-$PyCharmVersion.tar.gz
+    sudo -u $SUDO_USER tar -zxf /tmp/pycharm-community.tar.gz
     sudo -u $SUDO_USER mv pycharm-community-$PyCharmVersion ~/pycharm-community
     echo '
     [Desktop Entry]
@@ -188,7 +188,7 @@ fi
 
 
 # Samsung SCX, Samsung M2070 driver
-wget --no-check-certificate https://github.com/yakar/scriptler/raw/master/ubuntu-extra/ULD_v1.00.29.tar.gz -O /tmp/ULD_v1.00.29.tar.gz
+wget --no-check-certificate https://github.com/yakar/scriptler/raw/master/elementary-loki-apps/ULD_v1.00.29.tar.gz -O /tmp/ULD_v1.00.29.tar.gz
 (
 cd /tmp
 tar -zxf ULD_v1.00.29.tar.gz
