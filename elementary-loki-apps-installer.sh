@@ -122,11 +122,13 @@ if [ ! -d ~/Telegram ]; then
     cp /usr/share/applications/telegram.desktop /etc/xdg/autostart/
 fi
 
-# PyCharm ( https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&code=PCC && )
+
+# PyCharm ( https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&code=PCC )
+PyCharmVersion="2017.2.2"
 if [ ! -d ~/pycharm-community ]; then
-    sudo -u $SUDO_USER wget --no-check-certificate https://download.jetbrains.com/python/pycharm-community-2017.2.1.tar.gz -O /tmp/pycharm-community-2017.2.1.tar.gz
-    sudo -u $SUDO_USER tar -zxf /tmp/pycharm-community-2017.2.1.tar.gz
-    sudo -u $SUDO_USER mv pycharm-community-2017.2.1 ~/pycharm-community
+    sudo -u $SUDO_USER wget --no-check-certificate https://download.jetbrains.com/python/pycharm-community-2017.2.2.tar.gz -O /tmp/pycharm-community.tar.gz
+    sudo -u $SUDO_USER tar -zxf /tmp/pycharm-community-$PyCharmVersion.tar.gz
+    sudo -u $SUDO_USER mv pycharm-community-$PyCharmVersion ~/pycharm-community
     echo '
     [Desktop Entry]
     Version=1.0
@@ -139,6 +141,27 @@ if [ ! -d ~/pycharm-community ]; then
     Terminal=false
     StartupWMClass=jetbrains-pycharm
     ' | tee /usr/share/applications/jetbrains-pycharm.desktop
+fi
+
+
+# Gogland ( https://www.jetbrains.com/go/download/download-thanks.html?type=eap )
+GoglandVersion="172.3757.46"
+if [ ! -d ~/gogland ]; then
+    sudo -u $SUDO_USER wget --no-check-certificate https://download.jetbrains.com/go/gogland-172.3757.46.tar.gz -O /tmp/gogland.tar.gz
+    sudo -u $SUDO_USER tar -zxf /tmp/gogland.tar.gz
+    sudo -u $SUDO_USER mv Gogland-$GoglandVersion ~/gogland
+    echo '
+    [Desktop Entry]
+    Version=1.0
+    Type=Application
+    Name=Gogland
+    Icon=~/gogland/bin/gogland.png
+    Exec="~/gogland/bin/gogland.sh" %f
+    Commend=Develop with pleasure!
+    Categories=Development;IDE;
+    Terminal=false
+    StartupWMClass=jetbrains-gogland
+    ' | tee /usr/share/applications/jetbrains-gogland.desktop
 fi
 
 
