@@ -38,17 +38,18 @@ apt-get -y install software-properties-common
 add-apt-repository -y ppa:danielrichter2007/grub-customizer
 add-apt-repository -y ppa:maarten-baert/simplescreenrecorder
 add-apt-repository -y ppa:philip.scott/elementary-tweaks
-apt-add-repository -y ppa:numix/ppa
+apt-add-repository -y ppa:numix/ppa # numix iconset
+add-apt-repository -y ppa:twodopeshaggy/jarun # googler
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-apt-get update
+apt update
 
 
 # general apps
-apt-get -y install chromium-browser dkms elementary-tweaks filezilla gimp git grub-customizer guake keepassx libreoffice libreoffice-gtk libreoffice-style-sifr mail-notification meld numix-icon-theme-circle rdesktop simplescreenrecorder slack-desktop sqliteman sublime-text wine1.6 winetricks vim vlc
+apt -y install chromium-browser dkms elementary-tweaks filezilla gimp git googler grub-customizer guake keepassx libreoffice libreoffice-gtk libreoffice-style-sifr mail-notification meld numix-icon-theme-circle rdesktop simplescreenrecorder slack-desktop sqliteman sublime-text wine1.6 winetricks vim vlc
 
 # security/pentest/forensics apps
-apt-get -y install binwalk hping3 ngrep nikto nmap rarcrack sqlmap tshark volatility wireshark 
+apt -y install binwalk hping3 ngrep nikto nmap rarcrack sqlmap tshark volatility wireshark 
 
 # burp suite free
 if [ ! -f "/usr/share/applications/Burp Suite Free Edition-0.desktop" ]; then
@@ -64,7 +65,7 @@ if [ ! -f /usr/bin/msfconsole ]; then
 fi
 
 # Archive Formats and Restricted Extras
-apt-get -y install unace rar unrar p7zip-rar p7zip sharutils uudeview mpack arj cabextract lzip lunzip
+apt -y install unace rar unrar p7zip-rar p7zip sharutils uudeview mpack arj cabextract lzip lunzip
 
 
 # sublime text 3 packages
@@ -145,7 +146,7 @@ fi
 if [ ! -f /usr/bin/dropbox ]; then
     wget --no-check-certificate https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb -O /tmp/dropbox_2015.10.28_amd64.deb
     dpkg -i /tmp/dropbox_2015.10.28_amd64.deb
-    apt-get -f install
+    apt -f install
 fi
 
 
