@@ -53,7 +53,7 @@ apt -y install binwalk hping3 ngrep nikto nmap rarcrack sqlmap tshark volatility
 
 # burp suite free
 if [ ! -f "/usr/share/applications/Burp Suite Free Edition-0.desktop" ]; then
-    wget 'https://portswigger.net/burp/releases/download?product=free&version=1.7.26&type=linux' -O /tmp/burpsuite.sh
+    wget 'https://portswigger.net/burp/releases/download?product=free&version=1.7.27&type=linux' -O /tmp/burpsuite.sh
     sudo -u $SUDO_USER sh /tmp/burpsuite.sh
 fi
 
