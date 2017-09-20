@@ -110,16 +110,16 @@ if [ ! -d ~/Telegram ]; then
     tar -xf /tmp/telegram.tar.gz
     mv -f Telegram ~/Telegram
     sudo -u $SUDO_USER wget --no-check-certificate https://github.com/yakar/scriptler/raw/master/elementary-loki-apps/telegram.png -O ~/Telegram/icon.png
-    echo '
-    [Desktop Entry]
-    Encoding=UTF-8
-    Name=Telegram
-    Exec=~/Telegram/Telegram
-    Icon=~/Telegram/icon.png
-    Type=Application
-    Categories=Network;
-    ' | tee /usr/share/applications/telegram.desktop
-    cp /usr/share/applications/telegram.desktop /etc/xdg/autostart/
+    echo "
+[Desktop Entry]
+Encoding=UTF-8
+Name=Telegram
+Exec=/home/$SUDO_USER/Telegram/Telegram
+Icon=/home/$SUDO_USER/Telegram/icon.png
+Type=Application
+Categories=Network;
+    " | tee /home/$SUDO_USER/.local/share/applications/telegram.desktop
+    cp /home/$SUDO_USER/.local/share/applications/telegram.desktop /etc/xdg/autostart/
 fi
 
 
@@ -129,18 +129,18 @@ if [ ! -d ~/pycharm-community ]; then
     sudo -u $SUDO_USER wget --no-check-certificate https://download.jetbrains.com/python/pycharm-community-2017.2.2.tar.gz -O /tmp/pycharm-community.tar.gz
     sudo -u $SUDO_USER tar -zxf /tmp/pycharm-community.tar.gz
     sudo -u $SUDO_USER mv pycharm-community-$PyCharmVersion ~/pycharm-community
-    echo '
-    [Desktop Entry]
-    Version=1.0
-    Type=Application
-    Name=PyCharm
-    Icon=~/pycharm-community/bin/pycharm.png
-    Exec="~/pycharm-community/bin/pycharm.sh" %f
-    Comment=Develop with pleasure!
-    Categories=Development;IDE;
-    Terminal=false
-    StartupWMClass=jetbrains-pycharm
-    ' | tee /usr/share/applications/jetbrains-pycharm.desktop
+    echo "
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=PyCharm
+Icon=/home/$SUDO_USER/pycharm-community/bin/pycharm.png
+Exec='/home/$SUDO_USER/pycharm-community/bin/pycharm.sh' %f
+Comment=Develop with pleasure!
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-pycharm
+    " | tee /home/$SUDO_USER/.local/share/applications/jetbrains-pycharm.desktop
 fi
 
 
@@ -150,18 +150,18 @@ if [ ! -d ~/gogland ]; then
     sudo -u $SUDO_USER wget --no-check-certificate https://download.jetbrains.com/go/gogland-172.3757.46.tar.gz -O /tmp/gogland.tar.gz
     sudo -u $SUDO_USER tar -zxf /tmp/gogland.tar.gz
     sudo -u $SUDO_USER mv Gogland-$GoglandVersion ~/gogland
-    echo '
-    [Desktop Entry]
-    Version=1.0
-    Type=Application
-    Name=Gogland
-    Icon=~/gogland/bin/gogland.png
-    Exec="~/gogland/bin/gogland.sh" %f
-    Commend=Develop with pleasure!
-    Categories=Development;IDE;
-    Terminal=false
-    StartupWMClass=jetbrains-gogland
-    ' | tee /usr/share/applications/jetbrains-gogland.desktop
+    echo "
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Gogland
+Icon=/home/$SUDO_USER/gogland/bin/gogland.png
+Exec='/home/$SUDO_USER/gogland/bin/gogland.sh' %f
+Commend=Develop with pleasure!
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-gogland
+    " | tee /home/$SUDO_USER/.local/share/applications/jetbrains-gogland.desktop
 fi
 
 
