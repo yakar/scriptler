@@ -133,7 +133,7 @@ if [ ! -d ~/pycharm-community ]; then
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=PyCharm
+Name=PyCharm Community
 Icon=/home/$SUDO_USER/pycharm-community/bin/pycharm.png
 Exec='/home/$SUDO_USER/pycharm-community/bin/pycharm.sh' %f
 Comment=Develop with pleasure!
