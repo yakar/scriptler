@@ -49,7 +49,7 @@ apt update
 apt -y install chromium-browser dkms elementary-tweaks filezilla gimp git googler grub-customizer guake keepassx libreoffice libreoffice-gtk libreoffice-style-sifr mail-notification meld numix-icon-theme-circle rdesktop simplescreenrecorder slack-desktop sqliteman sublime-text wine1.6 winetricks vim vlc
 
 # security/pentest/forensics apps
-apt -y install binwalk hping3 ngrep nikto nmap rarcrack sqlmap tshark volatility wireshark 
+apt -y install binwalk hping3 ngrep nikto nmap rarcrack sqlmap tshark volatility wireshark
 
 # burp suite free
 if [ ! -f "/usr/share/applications/Burp Suite Free Edition-0.desktop" ]; then
@@ -114,12 +114,12 @@ if [ ! -d ~/Telegram ]; then
 [Desktop Entry]
 Encoding=UTF-8
 Name=Telegram
-Exec=/home/$SUDO_USER/Telegram/Telegram
-Icon=/home/$SUDO_USER/Telegram/icon.png
+Exec=$HOME/Telegram/Telegram
+Icon=$HOME/Telegram/icon.png
 Type=Application
 Categories=Network;
-    " | tee /home/$SUDO_USER/.local/share/applications/telegram.desktop
-    cp /home/$SUDO_USER/.local/share/applications/telegram.desktop /etc/xdg/autostart/
+    " | tee $HOME/.local/share/applications/telegram.desktop
+    cp $HOME/.local/share/applications/telegram.desktop /etc/xdg/autostart/
 fi
 
 
@@ -134,13 +134,13 @@ if [ ! -d ~/pycharm-community ]; then
 Version=1.0
 Type=Application
 Name=PyCharm Community
-Icon=/home/$SUDO_USER/pycharm-community/bin/pycharm.png
-Exec='/home/$SUDO_USER/pycharm-community/bin/pycharm.sh' %f
+Icon=$HOME/pycharm-community/bin/pycharm.png
+Exec='$HOME/pycharm-community/bin/pycharm.sh' %f
 Comment=Develop with pleasure!
 Categories=Development;IDE;
 Terminal=false
 StartupWMClass=jetbrains-pycharm
-    " | tee /home/$SUDO_USER/.local/share/applications/jetbrains-pycharm.desktop
+    " | tee $HOME/.local/share/applications/jetbrains-pycharm.desktop
 fi
 
 
@@ -155,13 +155,13 @@ if [ ! -d ~/gogland ]; then
 Version=1.0
 Type=Application
 Name=Gogland
-Icon=/home/$SUDO_USER/gogland/bin/gogland.png
-Exec='/home/$SUDO_USER/gogland/bin/gogland.sh' %f
+Icon=$HOME/gogland/bin/gogland.png
+Exec='$HOME/gogland/bin/gogland.sh' %f
 Commend=Develop with pleasure!
 Categories=Development;IDE;
 Terminal=false
 StartupWMClass=jetbrains-gogland
-    " | tee /home/$SUDO_USER/.local/share/applications/jetbrains-gogland.desktop
+    " | tee $HOME/.local/share/applications/jetbrains-gogland.desktop
 fi
 
 
