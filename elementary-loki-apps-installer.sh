@@ -32,6 +32,8 @@ if [ "$(id -u)" != "0" ]; then echo "Run with sudo: sudo $0"; exit 1; fi
 # update & upgrade
 apt-get update && apt-get -y upgrade && apt-get -y dist-upgrade
 
+# zeitgeist
+apt remove -y zeitgeist*
 
 # extra repositories
 apt-get -y install software-properties-common
