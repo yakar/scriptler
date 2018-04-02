@@ -205,3 +205,8 @@ if [ ! -d ~/.vim_runtime ]; then
 else
     ( cd ~/.vim_runtime; git pull --rebase )
 fi
+
+# zsh & oh-my-zsh
+apt -y zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sed -ie 's/ZSH_THEME="robbyrussell"/ZSH_THEME="lukerandall"/g' ~/.zshrc
