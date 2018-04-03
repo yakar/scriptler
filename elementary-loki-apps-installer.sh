@@ -6,7 +6,7 @@
 #
 # APPS:
 # chromium-browser dkms filezilla gimp git grub-customizer guake keepassx libreoffice libreoffice-gtk libreoffice-style-sifr mail-notification meld
-# numix-icon-theme-circle opera-stable rdesktop simplescreenrecorder slack-desktop sqliteman sublime-text wine1.6 winetricks vim vlc
+# numix-icon-theme-circle opera-stable rdesktop simplescreenrecorder slack-desktop sqliteman sublime-text uget wine1.6 winetricks vim vlc zsh
 #
 # binwalk hping3 ngrep nikto nmap rarcrack sqlmap tshark volatility wireshark burpsuite
 #
@@ -48,7 +48,7 @@ apt update
 
 
 # general apps
-apt -y install chromium-browser dkms elementary-tweaks filezilla gimp git googler grub-customizer guake keepassx libreoffice libreoffice-gtk libreoffice-style-sifr mail-notification meld numix-icon-theme-circle rdesktop simplescreenrecorder slack-desktop sqliteman sublime-text wine1.6 winetricks vim vlc
+apt -y install chromium-browser dkms elementary-tweaks filezilla gimp git googler grub-customizer guake keepassx libreoffice libreoffice-gtk libreoffice-style-sifr mail-notification meld numix-icon-theme-circle rdesktop simplescreenrecorder slack-desktop sqliteman sublime-text uget wine1.6 winetricks vim vlc zsh
 
 # security/pentest/forensics apps
 apt -y install binwalk hping3 ngrep nikto nmap rarcrack sqlmap tshark volatility wireshark
@@ -126,9 +126,9 @@ fi
 
 
 # PyCharm ( https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&code=PCC )
-PyCharmVersion="2017.2.2"
+PyCharmVersion="2018.1"
 if [ ! -d ~/pycharm-community ]; then
-    sudo -u $SUDO_USER wget --no-check-certificate https://download.jetbrains.com/python/pycharm-community-2017.2.2.tar.gz -O /tmp/pycharm-community.tar.gz
+    sudo -u $SUDO_USER wget --no-check-certificate https://download.jetbrains.com/python/pycharm-community-$PyCharmVersion.tar.gz -O /tmp/pycharm-community.tar.gz
     sudo -u $SUDO_USER tar -zxf /tmp/pycharm-community.tar.gz
     sudo -u $SUDO_USER mv pycharm-community-$PyCharmVersion ~/pycharm-community
     echo "
@@ -147,24 +147,24 @@ fi
 
 
 # Gogland ( https://www.jetbrains.com/go/download/download-thanks.html?type=eap )
-GoglandVersion="172.3757.46"
-if [ ! -d ~/gogland ]; then
-    sudo -u $SUDO_USER wget --no-check-certificate https://download.jetbrains.com/go/gogland-172.3757.46.tar.gz -O /tmp/gogland.tar.gz
-    sudo -u $SUDO_USER tar -zxf /tmp/gogland.tar.gz
-    sudo -u $SUDO_USER mv Gogland-$GoglandVersion ~/gogland
-    echo "
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Gogland
-Icon=$HOME/gogland/bin/gogland.png
-Exec='$HOME/gogland/bin/gogland.sh' %f
-Commend=Develop with pleasure!
-Categories=Development;IDE;
-Terminal=false
-StartupWMClass=jetbrains-gogland
-    " | tee $HOME/.local/share/applications/jetbrains-gogland.desktop
-fi
+#GoglandVersion="172.3757.46"
+#if [ ! -d ~/gogland ]; then
+#    sudo -u $SUDO_USER wget --no-check-certificate https://download.jetbrains.com/go/gogland-172.3757.46.tar.gz -O /tmp/gogland.tar.gz
+#    sudo -u $SUDO_USER tar -zxf /tmp/gogland.tar.gz
+#    sudo -u $SUDO_USER mv Gogland-$GoglandVersion ~/gogland
+#    echo "
+#[Desktop Entry]
+#Version=1.0
+#Type=Application
+#Name=Gogland
+#Icon=$HOME/gogland/bin/gogland.png
+#Exec='$HOME/gogland/bin/gogland.sh' %f
+#Commend=Develop with pleasure!
+#Categories=Development;IDE;
+#Terminal=false
+#StartupWMClass=jetbrains-gogland
+#    " | tee $HOME/.local/share/applications/jetbrains-gogland.desktop
+#fi
 
 
 # Dropbox
@@ -207,6 +207,5 @@ else
 fi
 
 # zsh & oh-my-zsh
-apt -y zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 sed -ie 's/ZSH_THEME="robbyrussell"/ZSH_THEME="lukerandall"/g' ~/.zshrc
