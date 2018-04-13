@@ -44,11 +44,13 @@ apt-add-repository -y ppa:numix/ppa # numix iconset
 add-apt-repository -y ppa:twodopeshaggy/jarun # googler
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+curl https://s3-us-west-2.amazonaws.com/brave-apt/keys.asc | sudo apt-key add -
+echo "deb [arch=amd64] https://s3-us-west-2.amazonaws.com/brave-apt xenial main" | sudo tee -a /etc/apt/sources.list.d/brave-xenial.list
 apt update
 
 
 # general apps
-apt -y install chromium-browser dkms elementary-tweaks filezilla gimp git googler grub-customizer guake keepassx libreoffice libreoffice-gtk libreoffice-style-sifr mail-notification meld numix-icon-theme-circle rdesktop simplescreenrecorder slack-desktop sqliteman sublime-text uget wine1.6 winetricks vim vlc zsh
+apt -y install brave chromium-browser dkms elementary-tweaks filezilla gimp git googler grub-customizer guake keepassx libreoffice libreoffice-gtk libreoffice-style-sifr mail-notification meld numix-icon-theme-circle rdesktop simplescreenrecorder slack-desktop sqliteman sublime-text uget wine1.6 winetricks vim vlc zsh
 
 # security/pentest/forensics apps
 apt -y install binwalk hping3 ngrep nikto nmap rarcrack sqlmap tshark volatility wireshark
@@ -94,7 +96,6 @@ if [ ! -f /usr/bin/opera ]; then
     wget --no-check-certificate 'http://www.opera.com/download/get/?id=41989&amp;location=414&amp;nothanks=yes&amp;sub=marine&utm_browser=safari&utm_ver=11.0&utm_os=linux' -O /tmp/opera-stable.deb
     dpkg -i /tmp/opera-stable.deb
 fi
-
 
 # Slack
 if [ ! -f /usr/bin/slack ]; then
