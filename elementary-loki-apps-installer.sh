@@ -147,25 +147,25 @@ StartupWMClass=jetbrains-pycharm
 fi
 
 
-# Gogland ( https://www.jetbrains.com/go/download/download-thanks.html?type=eap )
-#GoglandVersion="172.3757.46"
-#if [ ! -d ~/gogland ]; then
-#    sudo -u $SUDO_USER wget --no-check-certificate https://download.jetbrains.com/go/gogland-172.3757.46.tar.gz -O /tmp/gogland.tar.gz
-#    sudo -u $SUDO_USER tar -zxf /tmp/gogland.tar.gz
-#    sudo -u $SUDO_USER mv Gogland-$GoglandVersion ~/gogland
-#    echo "
-#[Desktop Entry]
-#Version=1.0
-#Type=Application
-#Name=Gogland
-#Icon=$HOME/gogland/bin/gogland.png
-#Exec='$HOME/gogland/bin/gogland.sh' %f
-#Commend=Develop with pleasure!
-#Categories=Development;IDE;
-#Terminal=false
-#StartupWMClass=jetbrains-gogland
-#    " | tee $HOME/.local/share/applications/jetbrains-gogland.desktop
-#fi
+# GoLand
+GoLandVersion="2018.1.4"
+if [ ! -d ~/goland ]; then
+    sudo -u $SUDO_USER wget --no-check-certificate https://download-cf.jetbrains.com/go/goland-$GoLandVersion.tar.gz -O /tmp/goland.tar.gz
+    sudo -u $SUDO_USER tar -zxf /tmp/goland.tar.gz
+    sudo -u $SUDO_USER mv GoLand-$GoLandVersion ~/goland
+    echo "
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=GoLand
+Icon=$HOME/goland/bin/goland.png
+Exec='$HOME/goland/bin/goland.sh' %f
+Commend=Develop with pleasure!
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-goland
+    " | tee $HOME/.local/share/applications/jetbrains-goland.desktop
+fi
 
 
 # Dropbox
